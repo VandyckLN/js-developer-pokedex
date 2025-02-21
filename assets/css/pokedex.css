@@ -4,78 +4,100 @@
     margin: 0;
     padding: 0;
     list-style: none;
+   background: linear-gradient(90deg, #c5e635dc 0%, #8a0af3 100%);
+    box-shadow: 5px #61ff06;
 }
 
+/* Sombras para cada tipo de Pokémon */
 .normal {
     background-color: #a6a877;
+    box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
+
 
 .grass {
     background-color: #77c850;
+     box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .fire {
     background-color: #ee7f30;
+     box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .water {
     background-color: #678fee;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .electric {
     background-color: #f7cf2e;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .ice {
     background-color: #98d5d7;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .ground {
     background-color: #dfbf69;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .flying {
     background-color: #a98ff0;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .poison {
     background-color: #a040a0;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .fighting {
     background-color: #bf3029;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .psychic {
     background-color: #f65687;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .dark {
     background-color: #725847;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .rock {
     background-color: #b8a137;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .bug {
     background-color: #a8b720;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .ghost {
     background-color: #6e5896;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .steel {
     background-color: #b9b7cf;
+      box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .dragon {
     background-color: #6f38f6;
+    box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .fairy {
     background-color: #f9aec7;
+     box-shadow: 0 0 10px inset rgba(55, 255, 5, 0.7) ;
 }
 
 .pokemon {
@@ -113,7 +135,7 @@
 }
 
 .pokemon .detail .types .type {
-    color: #fff;
+    color: #141313;
     padding: .25rem .5rem;
     margin: .25rem 0;
     font-size: .625rem;
@@ -137,14 +159,58 @@
 }
 
 .pagination button {
+    pointer-events: painted;
     padding: .25rem .5rem;
     margin: .25rem 0;
     font-size: .625rem;
     color: #fff;
-    background-color: #6c79db;
+    background-color: #db6c6c;
     border: none;
     border-radius: 1rem;
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+    box-shadow: 0 0 10px rgba(219, 108, 108, 0.5); /* Sombra inicial */
 }
+
+.pagination button:hover {
+    transform: translateY(-2px); /* Leve efeito de elevação */
+    box-shadow: 0 0 15px rgba(240, 0, 0, 0.8); /* Sombra mais clara e maior no hover */
+    background-color: #000000; /* Cor de fundo levemente mais clara no hover */
+    cursor: pointer;
+}
+
+/* Efeito hover para todos os tipos */
+.pokemon:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.power-bar {
+    width: 50px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.power-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+/* Cores específicas para cada tipo */
+.power-fill.fire { background: #ff5555; }
+.power-fill.water { background: #4fc3ff; }
+.power-fill.grass { background: #8dd694; }
+/* ... adicione cores para outros tipos ... */
 
 @media screen and (min-width: 380px) {
     .pokemons {

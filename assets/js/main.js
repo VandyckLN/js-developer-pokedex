@@ -13,14 +13,45 @@ function convertPokemonToLi(pokemon) {
 
             <div class="detail">
                 <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    ${pokemon.types.map((type) => `
+                        <li class="type ${type}">
+                            ${type}
+                            <div class="power-bar">
+                                <div class="power-fill ${type}" style="width: ${getPowerLevel(type)}%"></div>
+                            </div>
+                        </li>
+                    `).join('')}
                 </ol>
-
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
         </li>
     `
+}
+
+function getPowerLevel(type) {
+    // Valores de poder para cada tipo (você pode ajustar conforme desejar)
+    const powerLevels = {
+        normal: 60,
+        fire: 85,
+        water: 80,
+        electric: 75,
+        grass: 70,
+        ice: 65,
+        fighting: 90,
+        poison: 70,
+        ground: 75,
+        flying: 70,
+        psychic: 85,
+        bug: 60,
+        rock: 80,
+        ghost: 75,
+        dragon: 95,
+        dark: 80,
+        steel: 85,
+        fairy: 75
+    };
+    return powerLevels[type] || 70;
 }
 
 function loadPokemonItens(offset, limit) {
